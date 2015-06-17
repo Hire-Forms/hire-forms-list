@@ -119,10 +119,10 @@ class ListItem extends React.Component {
 
 		return (
 			<li
-				className={cx({
-					"hire-list"
-					{active: this.props.active}}}}
-				})}
+				className={cx(
+					"hire-list",
+					{active: this.props.active}
+				)}
 				style={liStyle}>
 				{el}
 				{remove}
