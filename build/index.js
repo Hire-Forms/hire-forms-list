@@ -390,7 +390,7 @@ var ListItem = (function (_React$Component) {
 			return _react2["default"].createElement(
 				"li",
 				{
-					className: (0, _classnames2["default"])("hire-list", { active: this.props.active }),
+					className: (0, _classnames2["default"])("hire-list-item", { active: this.props.active }),
 					style: liStyle },
 				el,
 				remove
