@@ -1,3 +1,6 @@
+### v1.0.3	(2015/7/29 11:58)
+* List-item should accept key/value only
+
 ### v1.0.2	(2015/7/21 13:24)
 * Rename list-item classname
 * Bump hi-bump
