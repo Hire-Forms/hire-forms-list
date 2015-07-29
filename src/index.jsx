@@ -2,6 +2,9 @@ import React from "react";
 
 import ListItem from "./list-item";
 
+import {arrayOfStringsOrArrayOfKeyValueMaps} from "hire-forms-prop-types";
+import {castKeyValue} from "hire-forms-utils";
+
 class List extends React.Component {
 	constructor(props) {
 		super(props);
@@ -46,7 +49,7 @@ class List extends React.Component {
 				onClick={this.handleListItemClick.bind(this, index)}
 				onRemove={this.handleListItemRemove.bind(this, index)}
 				removable={this.props.removable}
-				value={item} />
+				value={castKeyValue(item)} />
 		);
 
 		list = list.length ?
@@ -75,10 +78,10 @@ List.propTypes = {
 	editable: React.PropTypes.bool,
 	onChange: React.PropTypes.func,
 	onClick: React.PropTypes.func,
-	options: React.PropTypes.array,
+	options: arrayOfStringsOrArrayOfKeyValueMaps,
 	ordered: React.PropTypes.bool,
 	removable: React.PropTypes.bool,
-	values: React.PropTypes.array
+	values: arrayOfStringsOrArrayOfKeyValueMaps
 };
 
 export default List;

@@ -35,6 +35,8 @@
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "hire-forms-input": "^1.0.1"
+    "hire-forms-input": "^1.0.1",
+    "hire-forms-prop-types": "^2.0.1",
+    "hire-forms-utils": "^1.2.0"
   }
 }

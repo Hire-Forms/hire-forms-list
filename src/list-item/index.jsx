@@ -6,6 +6,8 @@ import cx from "classnames";
 
 import Input from "hire-forms-input";
 
+import {keyValueMap} from "hire-forms-prop-types";
+
 let ext = function(...styles) {
 	return Object.assign({}, ...styles);
 };
@@ -35,7 +37,7 @@ let inlineBlockStyle = {
 class ListItem extends React.Component {
 	componentWillUpdate(nextProps, nextState) {
 		if (!nextProps.active) {
-			nextState.value = nextProps.value;
+			nextState.value = nextProps.value.value;
 		}
 	}
 
@@ -50,7 +52,7 @@ class ListItem extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {value: props.value};
+		this.state = {value: props.value.value};
 	}
 
 	onInputChange(value) {
@@ -60,7 +62,7 @@ class ListItem extends React.Component {
 	onInputKeyDown(ev) {
 		// if keyCode is "enter" or "tab"
 		if (ev.keyCode === 13 || ev.keyCode === 9) {
-			if (this.state.value === this.props.value) {
+			if (this.state.value === this.props.value.value) {
 				this.props.onCancel();
 			} else {
 				this.props.onChange(this.state.value);
@@ -76,7 +78,7 @@ class ListItem extends React.Component {
 	render() {
 		let remove;
 
-		let input = (
+		let el = (this.props.active && this.props.editable) ?
 			<Input
 				onChange={this.onInputChange.bind(this)}
 				onKeyDown={this.onInputKeyDown.bind(this)}
@@ -85,10 +87,7 @@ class ListItem extends React.Component {
 					inlineBlockStyle,
 					inputStyle
 				)}
-				value={this.state.value} />
-		);
-
-		let span = (
+				value={this.state.value} /> :
 			<span
 				className="value"
 				onClick={this.props.onClick.bind(this)}
@@ -96,13 +95,8 @@ class ListItem extends React.Component {
 					inlineBlockStyle,
 					spanStyle
 				)}>
-				{this.props.value}
-			</span>
-		);
-
-		let el = (this.props.active && this.props.editable) ?
-			input :
-			span;
+				{this.props.value.value}
+			</span>;
 
 		if (this.props.active && this.props.removable) {
 			remove = (
@@ -145,7 +139,7 @@ ListItem.propTypes = {
 	onClick: React.PropTypes.func,
 	onRemove: React.PropTypes.func,
 	removable: React.PropTypes.bool,
-	value: React.PropTypes.string
+	value: keyValueMap
 };
 
 export default ListItem;
