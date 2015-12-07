@@ -5,6 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "start": "scripts/watch.sh",
+    "server": "browser-sync start --port 3500 --server examples",
     "bump": "hi-bump"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "babel-eslint": "^3.1.15",
     "babel-plugin-object-assign": "^1.1.0",
     "babelify": "^6.1.2",
+    "browser-sync": "^2.10.0",
     "browserify": "^10.2.4",
     "derequire": "^2.0.0",
     "eslint": "^0.23.0",
