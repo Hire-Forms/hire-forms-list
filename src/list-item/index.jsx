@@ -35,6 +35,14 @@ let inlineBlockStyle = {
 };
 
 class ListItem extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			value: props.value.value
+		};
+	}
+
 	componentWillUpdate(nextProps, nextState) {
 		if (!nextProps.active) {
 			nextState.value = nextProps.value.value;
@@ -47,12 +55,6 @@ class ListItem extends React.Component {
 			node.focus();
 			node.value = node.value;
 		}
-	}
-
-	constructor(props) {
-		super(props);
-
-		this.state = {value: props.value.value};
 	}
 
 	onInputChange(value) {
