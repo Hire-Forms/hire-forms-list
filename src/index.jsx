@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "classnames";
 
 import ListItem from "./list-item";
 
@@ -64,7 +65,13 @@ class List extends React.Component {
 			<span className="hire-empty-list">The list is empty</span>;
 
 		return (
-			<div className="hire-forms-list">
+			<div className={cx(
+				"hire-forms-list",
+				{
+					mutable: this.props.mutable,
+					editable: this.props.editable
+				}
+				)}>
 				{list}
 			</div>
 		);

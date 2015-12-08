@@ -1,8 +1,4 @@
 
-li.hire-forms-list-item {
-	cursor: pointer
-}
-
 li.hire-forms-list-item input,
 li.hire-forms-list-item span.value,
 li.hire-forms-list-item button.remove {
@@ -11,11 +7,26 @@ li.hire-forms-list-item button.remove {
 	vertical-align: top;
 }
 
-li.hire-forms-list-item input,
-li.hire-forms-list-item span.value {
+div.hire-forms-list li.hire-forms-list-item input,
+div.hire-forms-list li.hire-forms-list-item span.value {
+	width: 100%
+}
+
+div.hire-forms-list.mutable li.hire-forms-list-item input,
+div.hire-forms-list.mutable li.hire-forms-list-item span.value {
 	width: 90%
 }
 
+div.hire-forms-list.editable li.hire-forms-list-item span.value{
+	cursor: pointer;
+}
+
 li.hire-forms-list-item button.remove {
+	cursor: pointer;
+	opacity: 0;
 	width: 10%
+}
+
+li.hire-forms-list-item:hover button.remove {
+	opacity: 1;
 }

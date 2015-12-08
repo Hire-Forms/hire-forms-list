@@ -1,5 +1,4 @@
 // TODO merge with static-list/list-item?
-// TODO move css to default css file
 
 import React from "react";
 import cx from "classnames";
@@ -74,7 +73,7 @@ class ListItem extends React.Component {
 				{this.props.value.value}
 			</span>;
 
-		if (this.props.active && this.props.mutable) {
+		if (this.props.mutable) {
 			remove = (
 				<button
 					className="remove"
