@@ -276,7 +276,9 @@ var List = (function (_React$Component) {
 
 		_get(Object.getPrototypeOf(List.prototype), "constructor", this).call(this, props);
 
-		this.state = { editItemIndex: null };
+		this.state = {
+			editItemIndex: null
+		};
 	}
 
 	_inherits(List, _React$Component);
@@ -284,7 +286,9 @@ var List = (function (_React$Component) {
 	_createClass(List, [{
 		key: "handleListItemClick",
 		value: function handleListItemClick(index, ev) {
-			this.setState({ editItemIndex: index });
+			this.setState({
+				editItemIndex: index
+			});
 
 			if (this.props.onClick) {
 				this.props.onClick(index, ev);
@@ -321,11 +325,11 @@ var List = (function (_React$Component) {
 					active: _this.state.editItemIndex === index,
 					editable: _this.props.editable,
 					key: index,
+					mutable: _this.props.mutable,
 					onCancel: _this.handleListItemCancel.bind(_this, index),
 					onChange: _this.handleListItemChange.bind(_this, index),
 					onClick: _this.handleListItemClick.bind(_this, index),
 					onRemove: _this.handleListItemRemove.bind(_this, index),
-					removable: _this.props.removable,
 					value: (0, _hireFormsUtils.castKeyValue)(item) });
 			});
 
@@ -357,17 +361,17 @@ var List = (function (_React$Component) {
 List.defaultProps = {
 	editable: false,
 	ordered: false,
-	removable: false,
+	mutable: false,
 	values: []
 };
 
 List.propTypes = {
 	editable: _react2["default"].PropTypes.bool,
+	mutable: _react2["default"].PropTypes.bool,
 	onChange: _react2["default"].PropTypes.func,
 	onClick: _react2["default"].PropTypes.func,
 	options: _hireFormsPropTypes.arrayOfStringsOrArrayOfKeyValueMaps,
 	ordered: _react2["default"].PropTypes.bool,
-	removable: _react2["default"].PropTypes.bool,
 	values: _hireFormsPropTypes.arrayOfStringsOrArrayOfKeyValueMaps
 };
 
@@ -510,7 +514,7 @@ var ListItem = (function (_React$Component) {
 				this.props.value.value
 			);
 
-			if (this.props.active && this.props.removable) {
+			if (this.props.active && this.props.mutable) {
 				remove = _react2["default"].createElement(
 					"button",
 					{
@@ -538,7 +542,7 @@ var ListItem = (function (_React$Component) {
 ListItem.defaultProps = {
 	active: false,
 	editable: false,
-	removable: true
+	mutable: false
 };
 
 ListItem.propTypes = {
@@ -548,7 +552,7 @@ ListItem.propTypes = {
 	onChange: _react2["default"].PropTypes.func,
 	onClick: _react2["default"].PropTypes.func,
 	onRemove: _react2["default"].PropTypes.func,
-	removable: _react2["default"].PropTypes.bool,
+	mutable: _react2["default"].PropTypes.bool,
 	value: _hireFormsPropTypes.keyValueMap
 };
 

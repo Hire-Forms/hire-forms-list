@@ -3,14 +3,14 @@ html, body {
 	padding: 20px;
 }
 
-div.hire-list > ul {
-	list-style: none;
+div.hire-list > ul,
+div.hire-list > ol {
 	margin: 0;
-	padding: 0;
 	width: 300px;
 }
 
-div.hire-list > ul > li {
+div.hire-list > ul > li,
+div.hire-list > ol > li {
 	padding: 10px 0;
 	border-bottom: 1px solid #DDD;
 }
@@ -21,4 +21,40 @@ div.hire-list > ul > li:first-child {
 
 div.hire-list > ul > li:last-child {
 	border-bottom: none;
+}
+
+div.example div.hire-list,
+div.example div.code {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+
+div.example {
+	margin-bottom: 60px;
+}
+
+div.example h2 {
+	border-bottom: 1px solid #DDD;
+	margin: 1em 0;
+}
+div.hire-tabs > ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.hire-tabs > ul > li {
+	border: 1px solid #f5f2f0;;
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+}
+
+div.hire-tabs > ul > li.active {
+	background-color: #f5f2f0;
+}
+
+div.hire-tabs pre {
+	margin: 0;
 }
