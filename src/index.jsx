@@ -64,7 +64,7 @@ class List extends React.Component {
 			<span className="hire-empty-list">The list is empty</span>;
 
 		return (
-			<div className="hire-list">
+			<div className="hire-forms-list">
 				{list}
 			</div>
 		);
