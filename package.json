@@ -28,6 +28,7 @@
     "babel-eslint": "^3.1.15",
     "babel-plugin-object-assign": "^1.1.0",
     "babelify": "^6.1.2",
+    "brfs": "^1.4.1",
     "browser-sync": "^2.10.0",
     "browserify": "^10.2.4",
     "derequire": "^2.0.0",
@@ -44,6 +45,7 @@
     "classnames": "^2.1.2",
     "hire-forms-input": "^1.0.1",
     "hire-forms-prop-types": "^2.0.1",
-    "hire-forms-utils": "^1.2.0"
+    "hire-forms-utils": "^1.2.0",
+    "insert-css": "^0.2.0"
   }
 }
