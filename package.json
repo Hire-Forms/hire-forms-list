@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "start": "scripts/watch.sh",
-    "server": "browser-sync start --port 3500 --server examples",
+    "examples": "browser-sync start --server --files \"examples/*.js, examples/*.html, examples/*.css\" --startPath examples",
+    "watch-examples": "scripts/watch-examples.sh",
     "bump": "hi-bump"
   },
   "repository": {
