@@ -4,8 +4,6 @@ import Example from "./example";
 
 let listValues = ["one", "two", "three", "four", "five"];
 
-console.log(React.renderToStaticMarkup(<List
-				values={listValues.slice(0)} />));
 let app = (
 	<div className="app">
 		<h1>HireForms List</h1>
@@ -42,7 +40,7 @@ let app = (
 		<Example
 			title="Ordered list">
 			<List
-				ordered="true"
+				ordered={true}
 				values={listValues.slice(0)} />
 		</Example>
 	</div>

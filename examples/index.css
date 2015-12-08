@@ -3,27 +3,27 @@ html, body {
 	padding: 20px;
 }
 
-div.hire-list > ul,
-div.hire-list > ol {
+div.hire-forms-list > ul,
+div.hire-forms-list > ol {
 	margin: 0;
 	width: 300px;
 }
 
-div.hire-list > ul > li,
-div.hire-list > ol > li {
+div.hire-forms-list > ul > li,
+div.hire-forms-list > ol > li {
 	padding: 10px 0;
 	border-bottom: 1px solid #DDD;
 }
 
-div.hire-list > ul > li:first-child {
+div.hire-forms-list > ul > li:first-child {
 	padding-top: 0;
 }
 
-div.hire-list > ul > li:last-child {
+div.hire-forms-list > ul > li:last-child {
 	border-bottom: none;
 }
 
-div.example div.hire-list,
+div.example div.hire-forms-list,
 div.example div.code {
 	display: inline-block;
 	vertical-align: top;
