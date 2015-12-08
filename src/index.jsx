@@ -70,7 +70,7 @@ class List extends React.Component {
 List.defaultProps = {
 	editable: false,
 	ordered: false,
-	removable: true,
+	removable: false,
 	values: []
 };
 
