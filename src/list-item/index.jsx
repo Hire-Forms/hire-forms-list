@@ -3,36 +3,18 @@
 
 import React from "react";
 import cx from "classnames";
+import insertCss from "insert-css";
 
 import Input from "hire-forms-input";
 
 import {keyValueMap} from "hire-forms-prop-types";
 
-let ext = function(...styles) {
-	return Object.assign({}, ...styles);
-};
+let fs = require("fs");
+let css = fs.readFileSync(__dirname + "/index.css");
 
-let liStyle = {
-	cursor: "pointer"
-};
-
-let inputStyle = {
-	width: "90%"
-};
-
-let buttonStyle = {
-	width: "10%"
-};
-
-let spanStyle = {
-	width: "90%"
-};
-
-let inlineBlockStyle = {
-	display: "inline-block",
-	boxSizing: "border-box",
-	verticalAlign: "top"
-};
+if (typeof window !== "undefined" && window.document) {
+	insertCss(css, {prepend: true});
+}
 
 class ListItem extends React.Component {
 	constructor(props) {
@@ -85,18 +67,10 @@ class ListItem extends React.Component {
 				onChange={this.onInputChange.bind(this)}
 				onKeyDown={this.onInputKeyDown.bind(this)}
 				ref="input"
-				style={ext(
-					inlineBlockStyle,
-					inputStyle
-				)}
 				value={this.state.value} /> :
 			<span
 				className="value"
-				onClick={this.props.onClick.bind(this)}
-				style={ext(
-					inlineBlockStyle,
-					spanStyle
-				)}>
+				onClick={this.props.onClick.bind(this)}>
 				{this.props.value.value}
 			</span>;
 
@@ -104,11 +78,7 @@ class ListItem extends React.Component {
 			remove = (
 				<button
 					className="remove"
-					onClick={this.props.onRemove}
-					style={ext(
-						inlineBlockStyle,
-						buttonStyle
-					)}>
+					onClick={this.props.onRemove}>
 					x
 				</button>);
 		}
@@ -116,10 +86,9 @@ class ListItem extends React.Component {
 		return (
 			<li
 				className={cx(
-					"hire-list-item",
+					"hire-forms-list-item",
 					{active: this.props.active}
-				)}
-				style={liStyle}>
+				)}>
 				{el}
 				{remove}
 			</li>
@@ -136,11 +105,11 @@ ListItem.defaultProps = {
 ListItem.propTypes = {
 	active: React.PropTypes.bool,
 	editable: React.PropTypes.bool,
+	mutable: React.PropTypes.bool,
 	onCancel: React.PropTypes.func,
 	onChange: React.PropTypes.func,
 	onClick: React.PropTypes.func,
 	onRemove: React.PropTypes.func,
-	mutable: React.PropTypes.bool,
 	value: keyValueMap
 };
 

@@ -1,0 +1,21 @@
+
+li.hire-forms-list-item {
+	cursor: pointer
+}
+
+li.hire-forms-list-item input,
+li.hire-forms-list-item span.value,
+li.hire-forms-list-item button.remove {
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+li.hire-forms-list-item input,
+li.hire-forms-list-item span.value {
+	width: 90%
+}
+
+li.hire-forms-list-item button.remove {
+	width: 10%
+}
