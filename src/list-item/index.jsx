@@ -100,7 +100,7 @@ class ListItem extends React.Component {
 				{this.props.value.value}
 			</span>;
 
-		if (this.props.active && this.props.removable) {
+		if (this.props.active && this.props.mutable) {
 			remove = (
 				<button
 					className="remove"
@@ -130,7 +130,7 @@ class ListItem extends React.Component {
 ListItem.defaultProps = {
 	active: false,
 	editable: false,
-	removable: true
+	mutable: false
 };
 
 ListItem.propTypes = {
@@ -140,7 +140,7 @@ ListItem.propTypes = {
 	onChange: React.PropTypes.func,
 	onClick: React.PropTypes.func,
 	onRemove: React.PropTypes.func,
-	removable: React.PropTypes.bool,
+	mutable: React.PropTypes.bool,
 	value: keyValueMap
 };
 

@@ -9,11 +9,15 @@ class List extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {editItemIndex: null};
+		this.state = {
+			editItemIndex: null
+		};
 	}
 
 	handleListItemClick(index, ev) {
-		this.setState({editItemIndex: index});
+		this.setState({
+			editItemIndex: index
+		});
 
 		if (this.props.onClick) {
 			this.props.onClick(index, ev);
@@ -44,11 +48,11 @@ class List extends React.Component {
 				active={this.state.editItemIndex === index}
 				editable={this.props.editable}
 				key={index}
+				mutable={this.props.mutable}
 				onCancel={this.handleListItemCancel.bind(this, index)}
 				onChange={this.handleListItemChange.bind(this, index)}
 				onClick={this.handleListItemClick.bind(this, index)}
 				onRemove={this.handleListItemRemove.bind(this, index)}
-				removable={this.props.removable}
 				value={castKeyValue(item)} />
 		);
 
@@ -70,17 +74,17 @@ class List extends React.Component {
 List.defaultProps = {
 	editable: false,
 	ordered: false,
-	removable: false,
+	mutable: false,
 	values: []
 };
 
 List.propTypes = {
 	editable: React.PropTypes.bool,
+	mutable: React.PropTypes.bool,
 	onChange: React.PropTypes.func,
 	onClick: React.PropTypes.func,
 	options: arrayOfStringsOrArrayOfKeyValueMaps,
 	ordered: React.PropTypes.bool,
-	removable: React.PropTypes.bool,
 	values: arrayOfStringsOrArrayOfKeyValueMaps
 };
 
