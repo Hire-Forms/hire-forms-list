@@ -1,3 +1,18 @@
+### v2.0.0	(2015/12/14 9:26)
+* Move class methods to prop values
+* Update examples
+* Part of moving inline styles to CSS
+* Add state classes to move logic (hover) logic to CSS
+* Replace inline stylus with css
+* Change className to hire-forms-list
+* Add examples p2
+* Replace removable prop by mutable prop
+* Add examples
+* Add npm debug log
+* Set removable prop default to false
+* Add examples WIP
+* Move constructor to top
+
 ### v1.0.3	(2015/7/29 11:58)
 * List-item should accept key/value only
 
