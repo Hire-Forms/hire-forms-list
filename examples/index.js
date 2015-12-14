@@ -2020,11 +2020,6 @@
             }
           }
         }, {
-          key: "handleListItemCancel",
-          value: function handleListItemCancel() {
-            this.setState({ editItemIndex: null });
-          }
-        }, {
           key: "handleListItemChange",
           value: function handleListItemChange(index, newValue) {
             this.setState({ editItemIndex: null });
@@ -2051,7 +2046,9 @@
                 editable: _this.props.editable,
                 key: index,
                 mutable: _this.props.mutable,
-                onCancel: _this.handleListItemCancel.bind(_this, index),
+                onCancel: function onCancel() {
+                  return _this.setState({ editItemIndex: null });
+                },
                 onChange: _this.handleListItemChange.bind(_this, index),
                 onClick: _this.handleListItemClick.bind(_this, index),
                 onRemove: _this.handleListItemRemove.bind(_this, index),

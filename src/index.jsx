@@ -25,10 +25,6 @@ class List extends React.Component {
 		}
 	}
 
-	handleListItemCancel() {
-		this.setState({editItemIndex: null});
-	}
-
 	handleListItemChange(index, newValue) {
 		this.setState({editItemIndex: null});
 
@@ -50,7 +46,7 @@ class List extends React.Component {
 				editable={this.props.editable}
 				key={index}
 				mutable={this.props.mutable}
-				onCancel={this.handleListItemCancel.bind(this, index)}
+				onCancel={() => this.setState({editItemIndex: null})}
 				onChange={this.handleListItemChange.bind(this, index)}
 				onClick={this.handleListItemClick.bind(this, index)}
 				onRemove={this.handleListItemRemove.bind(this, index)}
