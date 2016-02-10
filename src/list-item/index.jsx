@@ -2,6 +2,7 @@
 // TODO move css to default css file
 
 import React from "react";
+import ReactDOM from "react-dom";
 import cx from "classnames";
 
 import Input from "hire-forms-input";
@@ -43,7 +44,7 @@ class ListItem extends React.Component {
 
 	componentDidUpdate() {
 		if (this.props.active && this.props.editable) {
-			let node = React.findDOMNode(this.refs.input);
+			let node = ReactDOM.findDOMNode(this.refs.input);
 			node.focus();
 			node.value = node.value;
 		}
