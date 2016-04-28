@@ -32,7 +32,7 @@ class ListItem extends React.Component {
 
 	componentDidUpdate() {
 		if (this.props.active && this.props.editable) {
-			let node = React.findDOMNode(this.refs.input);
+			let node = this.refs.input;
 			node.focus();
 			node.value = node.value;
 		}

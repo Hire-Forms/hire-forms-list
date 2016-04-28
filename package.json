@@ -21,7 +21,7 @@
   "homepage": "https://github.com/Hire-Forms/hire-forms-list",
   "peerDependencies": {
     "classnames": "^2.1.2",
-    "react": "^0.13.3"
+    "react": "^15.0.1"
   },
   "devDependencies": {
     "babel-core": "^5.5.8",
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "hire-forms-input": "^1.0.1",
+    "hire-forms-input": "^2.0.0",
     "hire-forms-prop-types": "^2.0.1",
     "hire-forms-utils": "^1.2.0",
     "insert-css": "^0.2.0"
