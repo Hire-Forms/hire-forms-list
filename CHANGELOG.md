@@ -1,3 +1,6 @@
+### v3.0.0	(2016/4/28 15:8)
+* Bump to React 15.0.1
+
 ### v2.0.0	(2015/12/14 9:26)
 * Move class methods to prop values
 * Update examples
