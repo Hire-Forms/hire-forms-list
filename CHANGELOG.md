@@ -1,3 +1,6 @@
+### v3.1.0	(2016/6/9 15:23)
+* Bump packages and add emptyMessage prop
+
 ### v3.0.0	(2016/4/28 15:8)
 * Bump to React 15.0.1
 
