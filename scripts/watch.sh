@@ -7,6 +7,6 @@ node_modules/.bin/watchify src/index.jsx \
   --external react \
   --outfile 'derequire > build/index.js' \
   --standalone HireFormsList \
-  --transform [ babelify --plugins object-assign ] \
+  --transform [ babelify --presets [ es2015 react ] ] \
   --transform brfs \
   --verbose

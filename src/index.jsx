@@ -1,23 +1,21 @@
-import React from "react";
-import cx from "classnames";
-
-import ListItem from "./list-item";
-
-import {arrayOfStringsOrArrayOfKeyValueMaps} from "hire-forms-prop-types";
-import {castKeyValue} from "hire-forms-utils";
+import React from 'react';
+import cx from 'classnames';
+import ListItem from './list-item';
+import {arrayOfStringsOrArrayOfKeyValueMaps} from 'hire-forms-prop-types';
+import {castKeyValue} from 'hire-forms-utils';
 
 class List extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			editItemIndex: null
+			editItemIndex: null,
 		};
 	}
 
 	handleListItemClick(index, ev) {
 		this.setState({
-			editItemIndex: index
+			editItemIndex: index,
 		});
 
 		if (this.props.onClick) {
@@ -26,14 +24,14 @@ class List extends React.Component {
 	}
 
 	handleListItemChange(index, newValue) {
-		this.setState({editItemIndex: null});
+		this.setState({ editItemIndex: null });
 
 		this.props.values[index] = newValue;
 		this.props.onChange(this.props.values);
 	}
 
 	handleListItemRemove(index) {
-		this.setState({editItemIndex: null});
+		this.setState({ editItemIndex: null });
 
 		this.props.values.splice(index, 1);
 		this.props.onChange(this.props.values);
@@ -46,11 +44,12 @@ class List extends React.Component {
 				editable={this.props.editable}
 				key={index}
 				mutable={this.props.mutable}
-				onCancel={() => this.setState({editItemIndex: null})}
+				onCancel={() => this.setState({ editItemIndex: null })}
 				onChange={this.handleListItemChange.bind(this, index)}
 				onClick={this.handleListItemClick.bind(this, index)}
 				onRemove={this.handleListItemRemove.bind(this, index)}
-				value={castKeyValue(item)} />
+				value={castKeyValue(item)}
+			/>
 		);
 
 		list = list.length ?
@@ -58,16 +57,18 @@ class List extends React.Component {
 				<ol>{list}</ol> :
 				<ul>{list}</ul>
 			) :
-			<span className="hire-empty-list">The list is empty</span>;
+			<span className="hire-empty-list">{this.props.emptyMessage}</span>;
 
 		return (
-			<div className={cx(
-				"hire-forms-list",
-				{
-					mutable: this.props.mutable,
-					editable: this.props.editable
-				}
-				)}>
+			<div
+				className={cx(
+					'hire-forms-list',
+					{
+						mutable: this.props.mutable,
+						editable: this.props.editable,
+					}
+				)}
+			>
 				{list}
 			</div>
 		);
@@ -76,19 +77,21 @@ class List extends React.Component {
 
 List.defaultProps = {
 	editable: false,
+	emptyMessage: 'The list is empty',
 	ordered: false,
 	mutable: false,
-	values: []
+	values: [],
 };
 
 List.propTypes = {
 	editable: React.PropTypes.bool,
+	emptyMessage: React.PropTypes.string,
 	mutable: React.PropTypes.bool,
 	onChange: React.PropTypes.func,
 	onClick: React.PropTypes.func,
 	options: arrayOfStringsOrArrayOfKeyValueMaps,
 	ordered: React.PropTypes.bool,
-	values: arrayOfStringsOrArrayOfKeyValueMaps
+	values: arrayOfStringsOrArrayOfKeyValueMaps,
 };
 
 export default List;
