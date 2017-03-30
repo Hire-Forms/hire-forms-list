@@ -1,3 +1,6 @@
+### v3.1.1	(2017/3/30 9:30)
+* Move to Typescript
+
 ### v3.1.0	(2016/6/9 15:23)
 * Bump packages and add emptyMessage prop
 
