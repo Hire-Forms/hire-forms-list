@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as cx from 'classnames';
 import ListItem from './list-item';
-import {arrayOfStringsOrArrayOfKeyValueMaps} from 'hire-forms-prop-types';
 import {castKeyValue} from 'hire-forms-utils';
 
 export interface IKeyValue {
@@ -9,7 +8,7 @@ export interface IKeyValue {
 	value: string;
 }
 
-interface IProps {
+export interface IListProps {
 	editable: boolean;
 	emptyMessage: string;
 	onChange?: (items: IKeyValue[]) => void;
@@ -24,8 +23,8 @@ interface IState {
 	editItemIndex: number;
 }
 
-class List extends React.Component<IProps, IState> {
-	public static defaultProps: IProps = {
+class List extends React.Component<IListProps, IState> {
+	public static defaultProps: IListProps = {
 		editable: false,
 		emptyMessage: 'The list is empty',
 		mutable: false,
@@ -89,7 +88,7 @@ class List extends React.Component<IProps, IState> {
 				{emptyMessage}
 			</span>
 		);
-
+		
 		return (
 			<div
 				className={cx(
