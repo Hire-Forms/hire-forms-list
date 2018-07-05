@@ -88,7 +88,7 @@ class List extends React.Component<IListProps, IState> {
 				{emptyMessage}
 			</span>
 		);
-		
+
 		return (
 			<div
 				className={cx(
@@ -114,3 +114,4 @@ class List extends React.Component<IListProps, IState> {
 // };
 
 export default List;
+
