@@ -1,3 +1,7 @@
+### v3.1.2	(2018/7/5 14:21)
+* Bump deps
+* Bump deps
+
 ### v3.1.1	(2017/3/30 9:30)
 * Move to Typescript
 
